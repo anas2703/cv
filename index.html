@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Hamouchi Anas">
+    <meta name="keyword" content="CV, Infomratique, Jeune, proactif, Mons, 20">
+    <meta name="description" content="Je m'appel Hamouchi Anas, je suis né le 27 mars 2003 et poursuit un crusus en 
+        Informatique & systèmes orientation réseaux & télécommunications 
+        à la HEH. Je suis une personne responsable et investi, qui cherche a maitrisé chaque 
+        chose que je réalise, je suis une pesonne optimiste qui cherche à
+        toujours travailler dans la bonhumeur afin de travailler dans un environement sain pour 
+        ceux qui m'entour.">
+    <link href="style.css" rel="stylesheet" >
+    <style>
+        header{
+            display: flex;  
+            align-items: center;
+            position: relative;
+            
+        }
+
+        img {
+            width: 130px;
+            height: 150px;
+            float: right; 
+            margin-right: 10px;
+        }	
+		
+		h1 {
+			font-size: 2.5rem;
+			font-weight: bold;
+            display: flex;
+		}
+
+	</style>
+</head>
+<body >
+    <div id="gauche">
+     <h3>Contact</h3>
+        <ul id="liste">
+            <li>Adresse : <br>
+                Rue Clémenceau 11, 7012 Jemappes
+            </li>
+            <li>Adresse mail : <br>
+            anas.hamouchi2003@gmail.com
+            </li>
+            <li>Numéro de contact : <br>
+            +32487 74 44 56</li>
+            <li>Profil Linkdine : <br>
+                <a href="https://www.linkedin.com/in/anas-hamouchi-b0aba619b/?original_referer=" target="_blank" >Anas Hamouchi</a></li>
+        </ul>
+    </div>
+    <div >
+        <div class="top">
+        <header id="image">
+            <img  src="Image1.jpg" alt="Mon image">
+            <h1> Anas Hamouchi </h1>
+        </header>
+        <br>
+	    <h2 >Étudiant en informatique</h2>
+        </div>
+        <div id ="corps">
+            <div id="column">
+                <h3 id="petit">Desciption</h3>
+                <p>
+                    Je m'appelle Hamouchi Anas, je suis né le 27 mars 2003 et poursuis un cursus en 
+                    Informatique & systèmes orientation réseaux & télécommunications 
+                    à la HEH. Je suis une personne responsable et investie, qui cherche à maitriser chaque 
+                    chose que je réalise, je suis une personne optimiste qui cherche à
+                    toujours travailler dans la bonne humeur afin de travailler dans un environnement sain pour 
+                    ceux qui m'entourent.
+                </p>
+            </div>
+            <br> 
+            <div id="column">
+                <h3 >Formation</h3>
+                <ul id="ul">
+                    <li>Haute Ecole en Hainaut - Bachelier en Informatique - 2021 - ... </li>
+                    <li>Fondateur d’une jeune association à but non lucratif - Fondateur et administrateur - 2020 à maintenant</li>
+                    <li> Athénée Royale Marguerite Bervoets - CESS - 2020 </li>
+                </ul>
+            </div>
+            <br> <br> 
+            <div id="column">
+                <h3 id="petit">Atouts</h3>
+                <ul id="ul">
+                    <li>Grande capacité d’adaptation</li>
+                    <li>Toujours positif</li>
+                    <li>Volontaire et motivé</li>
+                    <li>Capacité d’aller vers les gens</li>
+                    <li>Pro-actif</li>
+                    <li>Responsable</li>
+                    <li>Travail de manière méthodique </li>
+
+                </ul>
+            </div>
+            <br> <br> 
+            <div id="column">
+                <h3 >Compétences</h3>
+                <ul id="ul">
+                    <li>Réseaux : <br>
+                        Cisco Technologies (École partenaire Cisco). 
+                        Sécurité des réseaux, des infrastructures, des données,
+                        cybersécurité, gestion des risques. Mise en œuvre des services Windows Server et Linux</li>
+                    <li>Programmation et bases données : <br>
+                    Python, JavaScript, PHP, MySQL, C#</li>
+                    <li>WEB : <br>
+                    HTML/CSS, JavaScript, jQuerry, PHP, React</li>
+                </ul>
+            </div>
+            <br> <br> 
+            <div id="column">
+                <h3 id="petit">Hobbies</h3>
+                <ul id="ul">
+                    <li>Sport</li> 
+                    <li>La Culture (l’histoire, la littérature, la politique…)</li>
+                    <li>Le développement personnel</li>
+                    <li>Les technologies</li>
+                </ul>
+            </div>
+            <div id="column">
+                <h3 >Projets réalisé</h3>
+                <ul id="ul">
+                    <li>Mini serveur linux à domicile</li> 
+                    <li>Site internet pour mon association</li>
+                    <li>Serveur sur un Rasberry Pi </li>
+                    <li>Gestion d'une base de données lié à un site </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+	<script>
+		const jobTitles = ['Étudiant en informatique','Développeur Web', 'Administrateur réseau'];
+        let currentTitleIndex = 0;
+
+        function animateJobTitle() {
+        document.querySelector('h2').innerHTML = jobTitles[currentTitleIndex];
+        currentTitleIndex = (currentTitleIndex + 1) % jobTitles.length;
+        }
+        setInterval(animateJobTitle, 2500);
+
+        var image = document.getElementById("image");
+        var direction = -1;
+        var position = 0;
+        var count = 0;
+        var maxCount = 1;
+
+        var intervalId = setInterval(function() {
+        position += 5 * direction;
+        if (position < 0) {
+            direction = 1;
+        }
+        else if (position > 20) {
+            direction = -1;
+            count++;
+        }
+        if (count >= maxCount) {
+            clearInterval(intervalId);
+        }
+
+        image.style.top = position + "px";
+        }, 50);
+
+        
+	</script>
+</body>
+</html>
